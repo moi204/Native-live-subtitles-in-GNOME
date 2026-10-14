@@ -1,0 +1,3 @@
+[D-BUS Service]
+Name=net.sapples.LiveCaptions
+Exec=/usr/bin/env GIO_USE_VFS=local GIO_USE_PORTAL=0 GTK_USE_PORTAL=0 @bindir@/livecaptions

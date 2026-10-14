@@ -1,0 +1,9 @@
+<schemalist>
+  <schema id="org.gnome.shell.extensions.livecaptions" path="/org/gnome/shell/extensions/livecaptions/">
+    <key name="language" type="s">
+      <default>'auto'</default>
+      <summary>Caption language</summary>
+      <description>Language prompt used by the Parakeet model.</description>
+    </key>
+  </schema>
+</schemalist>

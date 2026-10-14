@@ -1,0 +1,8 @@
+{
+  "uuid": "livecaptions@local",
+  "name": "Live Captions",
+  "description": "Live Captions powered by Parakeet",
+  "version": 4,
+  "settings-schema": "org.gnome.shell.extensions.livecaptions",
+  "shell-version": ["46"]
+}

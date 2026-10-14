@@ -1,3 +1,3 @@
-[submodule "subprojects/april-asr"]
-	path = subprojects/april-asr
-	url = https://github.com/abb128/april-asr.git
+[submodule "subprojects/parakeet.cpp"]
+	path = subprojects/parakeet.cpp
+	url = https://github.com/mudler/parakeet.cpp.git

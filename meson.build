@@ -8,13 +8,20 @@ project('livecaptions', 'c',
 )
 
 cmake = import('cmake')
-april = cmake.subproject('april-asr')
+parakeet_options = cmake.subproject_options()
+parakeet_options.add_cmake_defines({
+  'CMAKE_BUILD_TYPE': 'Release',
+  'PARAKEET_BUILD_CLI': false,
+  'PARAKEET_BUILD_SERVER': false,
+  'PARAKEET_BUILD_TESTS': false,
+  'PARAKEET_SHARED': false,
+  'PARAKEET_WITH_CED': false,
+  'PARAKEET_WITH_VOICEDETECT': false,
+  'PARAKEET_GGML_VULKAN': false,
+})
+parakeet = cmake.subproject('parakeet.cpp', options: parakeet_options)
 
-april_lib = april.dependency('aprilasr_static')
-
-i18n = import('i18n')
-
-gnome = import('gnome')
+parakeet_lib = parakeet.dependency('parakeet')
 
 config_h = configuration_data()
 config_h.set_quoted('PACKAGE_VERSION', meson.project_version())
@@ -31,10 +38,3 @@ add_project_arguments([
 
 subdir('data')
 subdir('src')
-subdir('po')
-
-gnome.post_install(
-  glib_compile_schemas: true,
-  gtk_update_icon_cache: true,
-  update_desktop_database: false,
-)
