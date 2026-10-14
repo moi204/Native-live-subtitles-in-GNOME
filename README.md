@@ -26,7 +26,7 @@ forks are welcome.
 Clone with submodules, then build with a user prefix:
 
 ```sh
-git clone --recursive <repository-url>
+git clone --recursive https://github.com/moi204/Native-live-subtitles-in-GNOME.git
 cd LiveCaptions
 meson setup builddir --buildtype=release --prefix="$HOME/.local"
 meson compile -C builddir
