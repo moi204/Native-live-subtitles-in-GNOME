@@ -27,9 +27,6 @@ static bool start_stream(ParakeetEngine *engine) {
 
 ParakeetEngine *parakeet_engine_new(const char *model_path, const char *language,
                                     ParakeetTextCallback callback, void *user_data) {
-    const char *configured_threads = g_getenv("PARAKEET_THREADS");
-    int threads = configured_threads && *configured_threads ? atoi(configured_threads) : 4;
-    parakeet_capi_set_num_threads(threads > 0 ? threads : 4);
     ParakeetEngine *engine = g_new0(ParakeetEngine, 1);
     engine->context = parakeet_capi_load(model_path);
     if (!engine->context) {
